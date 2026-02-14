@@ -17,7 +17,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "falconjs": "falconjs",
+    "falconjs": "@triophore/falconjs",
     "@hapi/boom": "^10.0.1",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",
