@@ -1,10 +1,6 @@
 module.exports.validate = async function (request, session, CONTXET) {
-    // TODO: Implement your own logic here
-    // Example: Validate session against database or Redis
-    /*
-    if (session.valid) {
-        return { isValid: true, credentials: { id: session.userId, ... } };
+    if (username === 'admin' && password === 'secret') {
+        return { isValid: true, credentials: { id: 1, name: 'Admin', roles: ['admin'], permissions: { admin: ['*'] } } };
     }
-    */
     return { isValid: false };
 }

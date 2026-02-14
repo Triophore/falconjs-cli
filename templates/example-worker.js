@@ -1,4 +1,4 @@
-const { FalconBaseWorker } = require('falconjs');
+const { FalconBaseWorker } = require('@triophore/falconjs');
 
 /**
  * Example worker - rename and customize as needed

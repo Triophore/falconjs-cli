@@ -2,7 +2,7 @@
  * Falcon.js Application Entry Point
  */
 require('dotenv').config();
-const { FalconServer } = require("falconjs");
+const { FalconServer } = require("@triophore/falconjs");
 
 async function main() {
     try {

@@ -3,10 +3,10 @@
  * This file demonstrates the route structure expected by Falcon.js
  */
 
-module.exports.route = async function (server, context) {
-    
+module.exports.route = async function (context) {
+
     // Example GET route
-    server.route({
+    context.server.route({
         method: 'GET',
         path: '/api/example',
         options: {
@@ -24,7 +24,7 @@ module.exports.route = async function (server, context) {
     });
 
     // Example POST route with validation
-    server.route({
+    context.server.route({
         method: 'POST',
         path: '/api/example',
         options: {
@@ -36,7 +36,7 @@ module.exports.route = async function (server, context) {
         },
         handler: async (request, h) => {
             const { name, email } = request.payload;
-            
+
             // Example: Save to database if models are available
             if (context.models.example) {
                 const result = await context.models.example.create({
@@ -44,14 +44,14 @@ module.exports.route = async function (server, context) {
                     email,
                     createdAt: new Date()
                 });
-                
+
                 return {
                     success: true,
                     data: result,
                     message: 'Data saved successfully'
                 };
             }
-            
+
             return {
                 success: true,
                 message: 'Data received',
@@ -61,7 +61,7 @@ module.exports.route = async function (server, context) {
     });
 
     // Example route that sends job to worker
-    server.route({
+    context.server.route({
         method: 'POST',
         path: '/api/example/job',
         options: {
@@ -70,7 +70,7 @@ module.exports.route = async function (server, context) {
         },
         handler: async (request, h) => {
             const jobData = request.payload;
-            
+
             // Send job to worker via MQTT (if available)
             if (context.mqtt_client) {
                 context.mqtt_client.publish('worker_example_job', JSON.stringify({
@@ -78,13 +78,13 @@ module.exports.route = async function (server, context) {
                     data: jobData,
                     timestamp: new Date().toISOString()
                 }));
-                
+
                 return {
                     success: true,
                     message: 'Job queued for processing'
                 };
             }
-            
+
             return {
                 success: false,
                 message: 'Job queue not available'

@@ -1,6 +1,6 @@
 {
-  "name": "@triophore/falcon-cli",
-  "version": "1.0.0",
+  "name": "falconjscli",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,10 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "bin": {
-    "falcon-cli": "./cli.js"
-  },
-  "publishConfig": {
-    "access": "public"
+    "falconcli": "./cli.js"
   },
   "dependencies": {
     "@hapi/boom": "^10.0.1",

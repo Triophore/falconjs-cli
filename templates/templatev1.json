@@ -8,16 +8,12 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "falcon",
-    "nodejs",
-    "api"
-  ],
+  "keywords": ["falcon", "nodejs", "api"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "falconjs": "@triophore/falconjs",
+    "@triophore/falconjs": "^1.0.0",
     "@hapi/boom": "^10.0.1",
     "@hapi/inert": "^7.1.0",
     "@hapi/vision": "^7.0.3",

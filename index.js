@@ -227,17 +227,17 @@ async function start() {
         }
 
         mkDir.push("models/mongo")  // Fixed: falconjs expects models in models/mongo/
-        mkDir.push("routes")
+        mkDir.push("routes") 
         mkDir.push("services")
         mkDir.push("workers")
         mkDir.push("validators")
         mkDir.push("init")
         mkDir.push("logs")
-
+        
         if (enable_static) {
             mkDir.push("public")
         }
-
+        
         if (enable_templates) {
             mkDir.push("templates")
         }
@@ -332,27 +332,27 @@ async function start() {
 
         // Create example files
         await fs.promises.writeFile(
-            path.join(currentDir, "routes", "example.js"),
+            path.join(currentDir, "routes", "example.js"), 
             await fs.promises.readFile(path.join(__dirname, "templates", "example-route.js"))
         );
-
+        
         await fs.promises.writeFile(
-            path.join(currentDir, "validators", "ExamplePayload.js"),
+            path.join(currentDir, "validators", "ExamplePayload.js"), 
             await fs.promises.readFile(path.join(__dirname, "templates", "example-validator.js"))
         );
-
+        
         await fs.promises.writeFile(
-            path.join(currentDir, "services", "example.js"),
+            path.join(currentDir, "services", "example.js"), 
             await fs.promises.readFile(path.join(__dirname, "templates", "example-service.js"))
         );
-
+        
         await fs.promises.writeFile(
-            path.join(currentDir, "workers", "example.js"),
+            path.join(currentDir, "workers", "example.js"), 
             await fs.promises.readFile(path.join(__dirname, "templates", "example-worker.js"))
         );
-
+        
         await fs.promises.writeFile(
-            path.join(currentDir, "init", "post.js"),
+            path.join(currentDir, "init", "post.js"), 
             await fs.promises.readFile(path.join(__dirname, "templates", "post-init.js"))
         );
 
@@ -408,8 +408,8 @@ MODE=DEV
    2. npm install
    3. npm run dev
 
-📚 Documentation will be available at: http://localhost:[PORT]/documentation
-❤️  Health check at: http://localhost:[PORT]/health
+📚 Documentation will be available at: http://localhost:3000/documentation
+❤️  Health check at: http://localhost:3000/health
 `);
 
 
@@ -486,7 +486,7 @@ async function getProjectInfo() {
 async function create_mongoose_model() {
     mongoose_schema_builder(path.join(currentDir, "models", "mongo")) // Correct path for falconjs
 }
-// await fs.writeFileSync(model_path, JSON.stringify(res,null,2));
+    // await fs.writeFileSync(model_path, JSON.stringify(res,null,2));
 
 
 

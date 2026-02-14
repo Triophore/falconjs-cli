@@ -1,4 +1,4 @@
-const { FalconBaseService } = require('falconjs');
+const { FalconBaseService } = require('@triophore/falconjs');
 
 /**
  * Example service - rename and customize as needed
