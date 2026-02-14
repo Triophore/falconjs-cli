@@ -1,0 +1,14 @@
+- load settings file
+- setting up context object
+- setting up logger
+- init process
+- prep process
+- starts services
+- starts db
+- preinit
+- starts redis
+- loads models
+- start http loads routes etc , static templates
+- starts mqtt
+- starts socket io
+- postinit

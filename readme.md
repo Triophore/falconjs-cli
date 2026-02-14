@@ -1,0 +1,2 @@
+- create project
+- create models for both mongo and sequalize

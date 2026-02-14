@@ -1,0 +1,41 @@
+/**
+ * Falcon.js Application Entry Point
+ */
+require('dotenv').config();
+const { FalconServer } = require("falconjs");
+
+async function main() {
+    try {
+        /**
+         * Create the server instance with path to settings
+         */
+        const server = new FalconServer(__dirname);
+        
+        /**
+         * Optional: Set custom authentication strategy
+         */
+        // server.setAuthStrategy(async (context) => {
+        //     // Custom auth setup here
+        // });
+        
+        /**
+         * Initialize the server and related modules
+         */
+        await server.init();
+        
+        /**
+         * Start the HTTP server
+         */
+        await server.runServer();
+        
+        console.log(`🚀 Falcon server running on http://${server.SETTINGS.http.host}:${server.SETTINGS.http.port}`);
+        console.log(`📚 API Documentation: http://${server.SETTINGS.http.host}:${server.SETTINGS.http.port}/documentation`);
+        console.log(`❤️  Health Check: http://${server.SETTINGS.http.host}:${server.SETTINGS.http.port}/health`);
+        
+    } catch (error) {
+        console.error('❌ Failed to start server:', error);
+        process.exit(1);
+    }
+}
+
+main();

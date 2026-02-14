@@ -1,0 +1,38 @@
+{
+  "name": "falcon-app",
+  "version": "1.0.0",
+  "description": "Falcon.js application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "falcon",
+    "nodejs",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "falconjs": "falconjs",
+    "@hapi/boom": "^10.0.1",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "joi": "^17.13.3",
+    "jose": "^5.2.0",
+    "mongoose": "^8.3.1",
+    "redis": "^4.7.0",
+    "mqtt": "^5.13.3",
+    "log4js": "^6.9.1",
+    "rate-limiter-flexible": "^2.4.2",
+    "hapi-alive": "^2.0.4",
+    "hapi-swagger": "^17.2.1",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

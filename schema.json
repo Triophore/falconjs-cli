@@ -1,0 +1,42 @@
+{
+  "$id": "configSchema",
+  "type": "object",
+  "required": ["crud", "routes", "models"],
+  "properties": {
+    "crud": {
+      "type": "object",
+      "required": ["exclude"],
+      "properties": {
+        "exclude": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "auth": { "type": "object" },
+    "services": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "workers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "preInit": { "type": "string" },
+    "postInit": { "type": "string" },
+    "routes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "models": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

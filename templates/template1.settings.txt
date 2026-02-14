@@ -1,0 +1,15 @@
+module.exports.settings = {
+    crud: {
+        exclude: [
+        ]
+    },
+    auth:{},
+    services:[],
+    workers:[],
+    preInit:"",
+    postInit:"",
+    routes: [
+    ],
+    models: [
+    ]
+}
